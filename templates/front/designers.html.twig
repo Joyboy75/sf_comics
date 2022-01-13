@@ -1,0 +1,16 @@
+{% extends "/front/base.html.twig" %}
+
+
+{% block main %}
+
+{% for designer in designers %}
+
+<div class="card">
+
+<a href="{{ path('designer_show', {'id' : designer.id}) }}">{{ designer.name }}</a>
+    
+ </div>
+    
+{% endfor %}
+{% endblock %}
+

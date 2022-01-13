@@ -32,6 +32,26 @@ class Comics
      */
     private $year;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Licence::class, inversedBy="comics")
+     */
+    private $licence;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Editor::class, inversedBy="comics")
+     */
+    private $editor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Writer::class, inversedBy="comics")
+     */
+    private $writer;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Designer::class, inversedBy="comics")
+     */
+    private $designer;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +89,54 @@ class Comics
     public function setYear(\DateTimeInterface $year): self
     {
         $this->year = $year;
+
+        return $this;
+    }
+
+    public function getLicence(): ?Licence
+    {
+        return $this->licence;
+    }
+
+    public function setLicence(?Licence $licence): self
+    {
+        $this->licence = $licence;
+
+        return $this;
+    }
+
+    public function getEditor(): ?Editor
+    {
+        return $this->editor;
+    }
+
+    public function setEditor(?Editor $editor): self
+    {
+        $this->editor = $editor;
+
+        return $this;
+    }
+
+    public function getWriter(): ?Writer
+    {
+        return $this->writer;
+    }
+
+    public function setWriter(?Writer $writer): self
+    {
+        $this->writer = $writer;
+
+        return $this;
+    }
+
+    public function getDesigner(): ?Designer
+    {
+        return $this->designer;
+    }
+
+    public function setDesigner(?Designer $designer): self
+    {
+        $this->designer = $designer;
 
         return $this;
     }

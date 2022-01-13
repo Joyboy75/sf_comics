@@ -1,0 +1,17 @@
+{% extends "/front/base.html.twig" %}
+
+
+{% block main %}
+
+{% for comic in comics %}
+
+<div class="card">
+
+<a href="{{ path('comic_show', {'id' : comic.id}) }}">{{ comic.title }}</a>
+
+</div>
+
+    
+{% endfor %}
+{% endblock %}
+
