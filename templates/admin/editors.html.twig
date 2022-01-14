@@ -1,0 +1,16 @@
+{% extends "/admin/base.html.twig" %}
+
+
+{% block main %}
+
+{% for editor in editors %}
+
+<div class="card">
+
+<a href="{{ path('editor_show', {'id' : editor.id}) }}">{{ editor.name }}</a>
+    
+ </div>
+    
+{% endfor %}
+{% endblock %}
+

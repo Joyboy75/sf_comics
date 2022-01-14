@@ -1,0 +1,52 @@
+{% extends "admin/base.html.twig" %}
+
+
+{% block main %}
+
+	<div class="glob-const">
+		<h1>
+			{{ admin }}
+		</h1>
+	</div>
+
+	{# {{form(comicsForm)}} #}
+
+	{{form_start(comicsForm,  {'attr' : {'class' : 'form'}})}}
+
+	{# création d'un label #}
+	{{ form_label(comicsForm.title, 'Title du comic', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{#création des champs avec form_widget#}
+	{{ form_widget(comicsForm.title, { 'attr' : {'placeholder' : 'Title du comic', 'class' : 'title' } } )}}
+
+
+	{{ form_label(comicsForm.description, 'Description du comic', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(comicsForm.description, {'attr' : {'placeholder' : 'Description du comic', 'class' : 'content' } } ) }}
+
+	{{ form_label(comicsForm.year, 'Année du book', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(comicsForm.year, {'attr' : {'placeholder' : 'Année du book', 'class' : 'content' } } ) }}
+
+	{{ form_label(comicsForm.licence, 'Licence du comic', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(comicsForm.licence, {'attr' : {'placeholder' : 'Licence du comic', 'class' : 'content' } } ) }}
+
+	{{ form_label(comicsForm.editor, 'Editor du comic', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(comicsForm.editor, {'attr' : {'placeholder' : 'Editor du comic', 'class' : 'content' } } ) }}
+
+	{{ form_label(comicsForm.writer, 'Writer du comic', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(comicsForm.writer, {'attr' : {'placeholder' : 'Writer du comic', 'class' : 'content' } } ) }}Writer
+
+	{{ form_label(comicsForm.designer, 'Designer du comic', {'label_attr' : {'class' : 'label'} } ) }}
+	Designer
+	{{ form_widget(comicsForm.designer, {'attr' : {'placeholder' : 'Designer du comic', 'class' : 'content' } } ) }}
+
+	{{form_widget(comicsForm.enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+	{{form_end(comicsForm)}}
+
+
+{% endblock %}

@@ -22,7 +22,7 @@ class ComicsController extends AbstractController
     /**
      * @Route("/front/comics", name="comic_list")
      */
-    public function productList(ComicsRepository $comicsRepository)
+    public function comicList(ComicsRepository $comicsRepository)
     {
         $comics = $comicsRepository->findAll();
 
@@ -32,7 +32,7 @@ class ComicsController extends AbstractController
     /**
      * @Route("/front/comic/{id}", name="comic_show")
      */
-    public function writerShow($id, ComicsRepository $comicsRepository)
+    public function comicShow($id, ComicsRepository $comicsRepository)
     {
         $comic = $comicsRepository->find($id);
 

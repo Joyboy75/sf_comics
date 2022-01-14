@@ -1,0 +1,16 @@
+{% extends "/admin/base.html.twig" %}
+
+
+{% block main %}
+
+{% for writer in writers %}
+
+<div class="card">
+
+<a href="{{ path('writer_show', {'id' : writer.id}) }}">{{ writer.name }}</a>
+    
+ </div>
+    
+{% endfor %}
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends "/admin/base.html.twig" %}
+
+
+
+{% block main %}
+
+{% for message in app.flashes('notice') %}
+		<h3>{{ message }}</h3>
+	{% endfor %}
+    
+{% for comic in comics %}
+
+<div class="card">
+
+<a href="{{ path('admin_comic_show', {'id' : comic.id}) }}">{{ comic.title }}</a>
+
+</div>
+
+    
+{% endfor %}
+{% endblock %}
+
