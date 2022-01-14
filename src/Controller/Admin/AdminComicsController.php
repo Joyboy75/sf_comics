@@ -45,7 +45,7 @@ class AdminComicsController extends AbstractController
     /**
      * @Route("admin/create/comic/", name="admin_create_comic")
      */
-    public function adminCategoryCreate(Request $request, EntityManagerInterface $entityManagerInterface){
+    public function adminComicCreate(Request $request, EntityManagerInterface $entityManagerInterface){
         $comic = new Comics();
 
         $comicsForm = $this->createForm(ComicsType::class, $comic);

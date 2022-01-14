@@ -4,6 +4,8 @@ twig:
   globals:
     front:  "Vous êtes sur la partie front"
     admin:  "Vous êtes sur la partie admin"
+    geditors: '@App\Globals\Editors'
+    glicences: '@App\Globals\Licences'
 
 when@test:
   twig:

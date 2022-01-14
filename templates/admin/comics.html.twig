@@ -7,10 +7,12 @@
 {% for message in app.flashes('notice') %}
 		<h3>{{ message }}</h3>
 	{% endfor %}
-    
+
 {% for comic in comics %}
 
 <div class="card">
+
+<img width= 170px src="{{ asset('media/' ~ comic.images[0].src) }}" alt="{{comic.images[0].alt}}">
 
 <a href="{{ path('admin_comic_show', {'id' : comic.id}) }}">{{ comic.title }}</a>
 

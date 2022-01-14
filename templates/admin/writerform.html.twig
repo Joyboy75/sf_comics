@@ -1,0 +1,28 @@
+{% extends "/admin/base.html.twig" %}
+
+
+
+{% block main %}
+
+{# {{form(writerForm)}} #}
+
+	{{form_start(writerForm,  {'attr' : {'class' : 'form'}})}}
+
+	{# création d'un label #}
+	{{ form_label(writerForm.name, 'Name du writer', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{#création des champs avec form_widget#}
+	{{ form_widget(writerForm.name, { 'attr' : {'placeholder' : 'Name du writer', 'class' : 'title' } } )}}
+
+
+	{{ form_label(writerForm.country, 'Country du writer', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(writerForm.country, {'attr' : {'placeholder' : 'Country du writer', 'class' : 'content' } } ) }}
+
+	
+
+	{{form_widget(writerForm.enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+	{{form_end(writerForm)}}
+
+{% endblock %}

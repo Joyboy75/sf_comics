@@ -28,7 +28,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         $this->urlGenerator = $urlGenerator;
     }
 
-    public function authenticate(Request $request): Passport
+    public function authenticate(Request $request ): Passport
     {
         $email = $request->request->get('email', '');
 
@@ -48,6 +48,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
+
 
         // For example:
         return new RedirectResponse($this->urlGenerator->generate('comic_list'));

@@ -209,6 +209,11 @@ nav a:hover::after {
   width: 100%;
   z-index: 1000;
 }
+
+ul {
+  list-style-type: none;
+  }
+
 ul li:hover .sous {
   display: block;
 }

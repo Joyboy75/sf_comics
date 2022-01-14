@@ -9,15 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ComicsController extends AbstractController
 {
-    /**
-     * @Route("/comics", name="comics")
-     */
-    public function index(): Response
-    {
-        return $this->render('comics/index.html.twig', [
-            'controller_name' => 'ComicsController',
-        ]);
-    }
+    // /**
+    //  * @Route("front/comics", name="comics")
+    //  */
+    // public function index(): Response
+    // {
+    //     return $this->render('comics/index.html.twig', [
+    //         'controller_name' => 'ComicsController',
+    //     ]);
+    // }
 
     /**
      * @Route("/front/comics", name="comic_list")

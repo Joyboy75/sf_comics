@@ -7,6 +7,8 @@
 
 <div class="card">
 
+<img width= 170px src="{{ asset('media/' ~ comic.images[0].src) }}" alt="{{comic.images[0].alt}}">
+
 <a href="{{ path('comic_show', {'id' : comic.id}) }}">{{ comic.title }}</a>
 
 </div>

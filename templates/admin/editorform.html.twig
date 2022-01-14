@@ -1,0 +1,28 @@
+{% extends "/admin/base.html.twig" %}
+
+
+
+{% block main %}
+
+{# {{form(editorForm)}} #}
+
+	{{form_start(editorForm,  {'attr' : {'class' : 'form'}})}}
+
+	{# création d'un label #}
+	{{ form_label(editorForm.name, 'Name de l\'editor', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{#création des champs avec form_widget#}
+	{{ form_widget(editorForm.name, { 'attr' : {'placeholder' : 'Name de l\'editor', 'class' : 'title' } } )}}
+
+
+	{{ form_label(editorForm.country, 'Country de l\'editor', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(editorForm.country, {'attr' : {'placeholder' : 'Country de l\'editor', 'class' : 'content' } } ) }}
+
+	
+
+	{{form_widget(editorForm.enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+	{{form_end(editorForm)}}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "/admin/base.html.twig" %}
+
+
+
+{% block main %}
+
+{# {{form(licenceForm)}} #}
+
+	{{form_start(licenceForm,  {'attr' : {'class' : 'form'}})}}
+
+	{# création d'un label #}
+	{{ form_label(licenceForm.name, 'Name de la licence', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{#création des champs avec form_widget#}
+	{{ form_widget(licenceForm.name, { 'attr' : {'placeholder' : 'Name de la licence', 'class' : 'title' } } )}}
+
+	{{ form_label(licenceForm.description, 'Description de la licence', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(licenceForm.description, {'attr' : {'placeholder' : 'Description de la licence', 'class' : 'content' } } ) }}
+	
+	{{ form_label(licenceForm.media, 'Media de la licence', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(licenceForm.media, {'attr' : {'placeholder' : 'Media de la licence', 'class' : 'content' } } ) }}
+
+	
+
+	{{form_widget(licenceForm.enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+	{{form_end(licenceForm)}}
+
+{% endblock %}

@@ -7,7 +7,10 @@
 
 <div class="card">
 
-<a href="{{ path('licence_show', {'id' : licence.id}) }}">{{ licence.name }}</a>
+	<img src="{{asset('media/'~ licence.media)}}" alt="{{licence.name}}">
+
+
+<a href="{{ path('admin_licence_show', {'id' : licence.id}) }}">{{ licence.name }}</a>
     
  </div>
     

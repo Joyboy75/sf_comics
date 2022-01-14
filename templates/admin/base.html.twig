@@ -9,14 +9,40 @@
 </head>
 <body>
 
+<header>
+			<nav>
+				<a href="{{ path('admin_comic_list' )}}">comics</a>
+                <a href="{{ path('admin_designer_list' )}}">designers</a>
+				<a href="{{ path('admin_editor_list' )}}">editors</a>
+				<a href="{{ path('admin_licence_list' )}}">licences</a>
+				<a href="{{ path('admin_writer_list' )}}">writer</a>
+				{# <a href="{{ path('admin_writer_list' )}}">user</a> #}
+                <ul>
+    <li class="deroulant"><a href="#">add &ensp;</a>
+      <ul class="sous">
+        <li><a href="{{ path('admin_create_comic' )}}">Ajouter un Comic</a></li>
+        <li><a href="{{ path('admin_create_designer' )}}">Ajouter un Designer</a></li>
+        <li><a href="{{ path('admin_create_editor' )}}">Ajouter un Editor</a></li>
+        <li><a href="{{ path('admin_create_licence' )}}">Ajouter une Licence</a></li>
+        <li><a href="{{ path('admin_create_writer' )}}">Ajouter un Writer</a></li>
+        
+      </ul>
+    </li>
+			</nav>
+		</header>
 <div class="glob-const">
 		<h1>
 			{{ admin }}
 		</h1>
 	</div>
-{# {% for grcomic in gcomics.getAll %}
-			<h3>{{ grcomic.name }}</h3>
-		{% endfor %} #}
+
+  {% for grlicence in glicences.getAll %}
+			<h4>{{ grlicence.name }}</h4>
+		{% endfor %}
+  
+  {% for greditor in geditors.getAll %}
+			<h4>{{ greditor.name }}</h4>
+		{% endfor %}
     
     {% block main %}
         

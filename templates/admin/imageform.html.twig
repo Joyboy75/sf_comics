@@ -1,0 +1,32 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+
+
+ 
+    {{form_start(imageForm,  {'attr' : {'class' : 'form'}})}}
+
+	{# création d'un label #}
+	{{ form_label(imageForm.src, 'Fichier de l\'image', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{#création des champs avec form_widget#}
+	{{ form_widget(imageForm.src, { 'attr' : {'placeholder' : 'Fichier de l\'image', 'class' : 'title' } } )}}
+
+
+	{{ form_label(imageForm.alt, 'Alt de l\'image', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(imageForm.alt, {'attr' : {'placeholder' : 'Alt de l\'image', 'class' : 'content' } } ) }}
+
+	{{ form_label(imageForm.title, 'Title de l\'image', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(imageForm.title, {'attr' : {'placeholder' : 'Title de l\'image', 'class' : 'content' } } ) }}
+	
+    {{ form_label(imageForm.comics, 'Title du comics', {'label_attr' : {'class' : 'label'} } ) }}
+
+	{{ form_widget(imageForm.comics, {'attr' : {'placeholder' : 'Title du comics', 'class' : 'content' } } ) }}
+
+	{{form_widget(imageForm.enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+	{{form_end(imageForm)}}
+
+{% endblock %}

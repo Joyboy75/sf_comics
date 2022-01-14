@@ -4,9 +4,20 @@
 {% block main %}
 
 
-<div class="card">	
+<div class="card">
+	
+		<img width=200px src="{{ asset('media/' ~ licence.media) }}" alt="{{licence.name}}">
+
+
 <h2>{{ licence.name }}</h2>
 	<p>{{ licence.description }}</p>
 </div>
+
+<div class="btn-upd-dlt">
+			<a href="{{ path('admin_update_licence', {'id' : licence.id}) }}">Modifier</a>
+			<a href="{{ path('admin_delete_licence', {'id' : licence.id} )}}">Supprimer</a>
+
+
+		</div>
 
 {% endblock %}

@@ -7,9 +7,22 @@
 
 <div class="card">
 
+{% for image in comic.images %}
+
+			<img width="200px" src="{{ asset('media/' ~ image.src) }}" alt="{{ image.alt }}">
+
+		{% endfor %}
+
 <h2>{{ comic.title }}</h2>
 	<p>{{ comic.description }}</p>
     
 </div>
+
+<div class="btn-upd-dlt">
+			<a href="{{ path('admin_update_comic', {'id' : comic.id}) }}">Modifier</a>
+			<a href="{{ path('admin_delete_comic', {'id' : comic.id} )}}">Supprimer</a>
+
+
+		</div>
 
 {% endblock %}

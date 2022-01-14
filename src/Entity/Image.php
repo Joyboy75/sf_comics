@@ -32,6 +32,11 @@ class Image
      */
     private $title;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Comics::class, inversedBy="images")
+     */
+    private $comics;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Image
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getComics(): ?Comics
+    {
+        return $this->comics;
+    }
+
+    public function setComics(?Comics $comics): self
+    {
+        $this->comics = $comics;
 
         return $this;
     }
